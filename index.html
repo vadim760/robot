@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://yookassa.ru/integration/simplepay/css/yookassa_construct_form.css?v=1.23.0">
     <link rel="stylesheet" href="style.css" />
+   
+
   </head>
   <body>
     <header>
@@ -446,7 +450,7 @@
                     </li>
                   </ul>
                   <div class="price__card__button">
-                    <button class="price__button">Оплатить онлайн</button>
+                    <button class="price__button" onclick="showPopup('online')">Оплатить онлайн</button>
                   </div>
                 </div>
               </div>
@@ -478,7 +482,7 @@
                     </li>
                   </ul>
                   <div class="price__card__button">
-                    <button class="price__button">Оплатить онлайн</button>
+                    <button class="price__button" onclick="showPopup('standart')">Оплатить онлайн</button>
                   </div>
                 </div>
               </div>
@@ -517,7 +521,7 @@
                   </ul>
 
                   <div class="price__card__button">
-                    <button class="price__button white__blue">
+                    <button class="price__button white__blue"  onclick="showPopup('vip')" >
                       Стать экспонентом
                     </button>
                   </div>
@@ -526,7 +530,117 @@
             </div>
           </div>
         </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup-online">
+          <span class="close-btn" onclick="closePopup()">×</span>
+          <form class="yoomoney-payment-form" action="https://yookassa.ru/integration/simplepay/payment" method="post" accept-charset="utf-8" >
+
+    
+    
+
+            <div class="ym-customer-info">
+                <div class="ym-block-title">О покупателе</div>
+                <input name="cps_email" class="ym-input" placeholder="Email" type="text" value="">
+                <input name="cps_phone" class="ym-input" placeholder="Телефон" type="text" value="">
+                <input name="custName" class="ym-input" placeholder="ФИО" type="text" value="">
+                
+                
+                <textarea class="ym-textarea ym-display-none" name="orderDetails" placeholder="Комментарий" value="оплата за конференцию yacuai.com">оплата за конференцию yacuai.com</textarea>
+            </div>
+        
+            <div class="ym-hidden-inputs">
+               
+               
+               
+            </div>
+        
+            
+            
+            <div class="ym-payment-btn-block ym-before-line ym-align-space-between">
+                <div class="ym-input-icon-rub ym-display-none">
+                    <input name="sum" placeholder="0.00" class="ym-input ym-sum-input ym-required-input" type="number" step="any" value="5000">
+                </div>
+                <button data-text="Заплатить" class="ym-btn-pay ym-result-price"><span class="ym-text-crop">Заплатить</span> <span class="ym-price-output"> 5&nbsp;000,00&nbsp;₽</span></button><img src="https://yookassa.ru/integration/simplepay/img/iokassa-gray.svg?v=1.23.0" class="ym-logo" width="114" height="27" alt="ЮKassa">
+            </div>
+        <input name="shopId" type="hidden" value="832524"></form>
+        
+      </div>
+  
+      <!-- Попап для Standart -->
+      <div class="popup" id="popup-standart">
+          <span class="close-btn" onclick="closePopup()">×</span>
+          <form class="yoomoney-payment-form" action="https://yookassa.ru/integration/simplepay/payment" method="post" accept-charset="utf-8" >
+
+    
+    
+
+            <div class="ym-customer-info">
+                <div class="ym-block-title">О покупателе</div>
+                <input name="cps_email" class="ym-input" placeholder="Email" type="text" value="">
+                <input name="cps_phone" class="ym-input" placeholder="Телефон" type="text" value="">
+                <input name="custName" class="ym-input" placeholder="ФИО" type="text" value="">
+                
+                
+                <textarea class="ym-textarea ym-display-none" name="orderDetails" placeholder="Комментарий" value="оплата за конференцию yacuai.com">оплата за конференцию yacuai.com</textarea>
+            </div>
+        
+            <div class="ym-hidden-inputs">
+               
+               
+               
+            </div>
+        
+            
+            
+            <div class="ym-payment-btn-block ym-before-line ym-align-space-between">
+                <div class="ym-input-icon-rub ym-display-none">
+                    <input name="sum" placeholder="0.00" class="ym-input ym-sum-input ym-required-input" type="number" step="any" value="8000">
+                </div>
+                <button data-text="Заплатить" class="ym-btn-pay ym-result-price"><span class="ym-text-crop">Заплатить</span> <span class="ym-price-output"> 8&nbsp;000,00&nbsp;₽</span></button><img src="https://yookassa.ru/integration/simplepay/img/iokassa-gray.svg?v=1.23.0" class="ym-logo" width="114" height="27" alt="ЮKassa">
+            </div>
+        <input name="shopId" type="hidden" value="832524"></form>
+      </div>  
+  
+      <!-- Попап для VIP -->
+      <div class="popup" id="popup-vip">
+          <span class="close-btn" onclick="closePopup()">×</span>
+          <form class="yoomoney-payment-form" action="https://yookassa.ru/integration/simplepay/payment" method="post" accept-charset="utf-8" >
+
+    
+    
+
+            <div class="ym-customer-info">
+                <div class="ym-block-title">О покупателе</div>
+                <input name="cps_email" class="ym-input" placeholder="Email" type="text" value="">
+                <input name="cps_phone" class="ym-input" placeholder="Телефон" type="text" value="">
+                <input name="custName" class="ym-input" placeholder="ФИО" type="text" value="">
+                
+                
+                <textarea class="ym-textarea ym-display-none" name="orderDetails" placeholder="Комментарий" value="оплата за конференцию yacuai.com">оплата за конференцию yacuai.com</textarea>
+            </div>
+        
+            <div class="ym-hidden-inputs">
+               
+               
+               
+            </div>
+        
+            
+            
+            <div class="ym-payment-btn-block ym-before-line ym-align-space-between">
+                <div class="ym-input-icon-rub ym-display-none">
+                    <input name="sum" placeholder="0.00" class="ym-input ym-sum-input ym-required-input" type="number" step="any" value="15000">
+                </div>
+                <button data-text="Заплатить" class="ym-btn-pay ym-result-price"><span class="ym-text-crop">Заплатить</span> <span class="ym-price-output"> 15&nbsp;000,00&nbsp;₽</span></button><img src="https://yookassa.ru/integration/simplepay/img/iokassa-gray.svg?v=1.23.0" class="ym-logo" width="114" height="27" alt="ЮKassa">
+            </div>
+        <input name="shopId" type="hidden" value="832524"></form>
+        
+      </div>
+            
+        </div>
       </section>
+
+  
       <section>
         <div class="watch__update">
           <div class="container">
@@ -666,6 +780,7 @@
             </div>
           </div>
         </div>
+        
       </section>
     </main>
     <footer>
@@ -689,10 +804,12 @@
                 <img class="logo" src="images/logo.png" alt="" />
               </a>
             </div>
+            
           </div>
         </div>
       </div>
     </footer>
+    <script src="https://yookassa.ru/integration/simplepay/js/yookassa_construct_form.js?v=1.23.0"></script>
     <script src="script.js"></script>
   </body>
 </html>

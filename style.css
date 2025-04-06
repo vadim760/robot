@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
 
+
 }
 input:focus {
     outline: none;
@@ -742,6 +743,44 @@ button {
 .white__blue {
     background-color: rgba(16, 219, 255, 1);
 }
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    z-index: 1000;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #459CED;
+}
+
+/* Специфичные стили для содержимого попапов */
+.popup-content {
+    display: none;
+}
 .watch__update {
     display: flex;
     justify-content: center;
@@ -1133,7 +1172,78 @@ button {
 .letter {
     display: none;
 }
+@media (max-width: 80rem) {
+    .footer__wrapper {
+        overflow: hidden;
+      }
+      .venue__container {
+        overflow: hidden;
+      }
+      .watch__update {
+        overflow: hidden;
+      }
+      .price {
+        overflow: hidden;
+      }
+      .who {
+        overflow: hidden;
+      }
+      .speeches {
+        overflow: hidden;
+      }
+      .organiser {
+        overflow: hidden;
+      }
+      .robotization {
+        overflow: hidden;
+      }
+      .room__images {
+        justify-content: center;
+      }
+      .room__image {
+        width: 45rem;
+        height: 30rem;
+      }
+      .venue__content {
+        height: 2600px;
+      }
+      .who__cards {
+        padding-right: 5.9375rem;
+      }
+      .conference__img {
+        width: 23.75rem;
+        height: 300px;
+      }
+      .warehouse__img {
+        width: 31.25rem;
 
+      }
+      .conference__right__text {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+      }
+      .robotization {
+        height: 740px;
+      }
+      .container {
+        max-width: 78rem;
+      }
+      .who__cards {
+       
+        margin-left: 2.8125rem;
+        gap: .9375rem;
+      }
+      .price__cards {
+        gap: .9375rem;
+      }
+      .watch__update__content {
+        margin-left: 30px;
+      }
+      .contacts {
+        margin-right: 30px;
+      }
+}
 
 @media (min-width: 23.4375rem) and (max-width: 45rem) {
     .navigation__list {
