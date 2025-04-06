@@ -1135,7 +1135,7 @@ button {
 }
 
 
-@media (max-width: 23.4375rem) {
+@media (min-width: 23.4375rem) and (max-width: 45rem) {
     .navigation__list {
         display: none;
     }
@@ -1173,6 +1173,7 @@ button {
         display: block;
     }
     .robotization {
+        position: relative;
         padding-top: 3.125rem;
     }
     .robot__subtittle {
@@ -1207,10 +1208,10 @@ button {
         padding: .375rem .8125rem .375rem .8125rem;
     }
     .spiral {
-        left: 0;
-        bottom: 0;
-        right: -20%;
-        top: 90%;
+  
+  
+        right: 1%;
+        top: 55%;
     }
     .robotization__banner {
         flex-direction: column;
@@ -1247,12 +1248,13 @@ button {
         width: 1.125rem;
         height: 1.5625rem;
         vertical-align: middle;
-        
-        left: 12%;
-        padding-right: .625rem;
+        left: -11%;
+     
+
     
     }
     .conference__item {
+        position: relative;
         margin-left: 30px;
     }
     .tittle {
@@ -1347,6 +1349,7 @@ button {
         height: 1750px;
     }
     .who__cards {
+        align-items: center;
        padding-right: 27px;
         margin-left: 18px;
         gap: 15px;
@@ -1473,14 +1476,17 @@ button {
         padding-bottom: 0;
     }
     .venue__cards {
+        align-items: center;
         flex-direction: column;
         gap: 0;
         padding-left: 1.125rem;
         padding-right: 1.125rem;
+   
     }
     .venue__card {
         margin-top: 1.875rem;
         width: 100%;
+        max-width: 500px;
 
     }
     .area {
@@ -1493,6 +1499,7 @@ button {
         max-width: 13.75rem;
     }
     .room__images {
+        justify-content: center;
         padding-left: 1.125rem;
         padding-right: 50px;
     }
@@ -1504,6 +1511,8 @@ button {
         height: 2100px;
     }
     .footer__wrapper {
+        justify-content: flex-start;
+        padding-left: 1.875rem;
         margin-top: 1.875rem;
     }
     .footer__content {
